@@ -6,9 +6,9 @@ import { useEffect } from "react";
 import { db, getTasks } from "@/services/database";
 
 export default function TabOneScreen() {
-  useEffect(() => {
-    getTasks();
-  }, []);
+  // useEffect(() => {
+  //   getTasks();
+  // }, []);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>

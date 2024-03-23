@@ -57,9 +57,9 @@ function RootLayoutNav() {
   const navigationRef = useNavigationContainerRef();
   useReactNavigationDevTools(navigationRef);
 
-  useEffect(() => {
-    initDb();
-  }, []);
+  // useEffect(() => {
+  //   initDb();
+  // }, []);
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
