@@ -8,6 +8,7 @@ import { useFonts } from "expo-font";
 import { Stack, useNavigationContainerRef } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { initDb } from "@/services/database";
 
 import { useReactNavigationDevTools } from "@dev-plugins/react-navigation";
 
@@ -56,11 +57,15 @@ function RootLayoutNav() {
   const navigationRef = useNavigationContainerRef();
   useReactNavigationDevTools(navigationRef);
 
+  useEffect(() => {
+    initDb();
+  }, []);
+
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: "modal" }} />
+        <Stack.Screen name="modal" />
       </Stack>
     </ThemeProvider>
   );
